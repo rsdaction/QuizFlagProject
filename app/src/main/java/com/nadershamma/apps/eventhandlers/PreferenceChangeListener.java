@@ -2,6 +2,7 @@ package com.nadershamma.apps.eventhandlers;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.preference.ListPreference;
 import android.widget.Toast;
 
 import com.nadershamma.apps.androidfunwithflags.MainActivity;
@@ -21,7 +22,7 @@ public class PreferenceChangeListener implements OnSharedPreferenceChangeListene
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         this.mainActivity.setPreferencesChanged(true);
-
+        String  s = "";
         if (key.equals(this.mainActivity.getREGIONS())) {
             this.mainActivity.getQuizViewModel().setGuessRows(sharedPreferences.getString(
                     MainActivity.CHOICES, null));
@@ -40,6 +41,12 @@ public class PreferenceChangeListener implements OnSharedPreferenceChangeListene
                 Toast.makeText(this.mainActivity, R.string.default_region_message,
                         Toast.LENGTH_LONG).show();
             }
+        }else if (key.equals(this.mainActivity.getVOPROS())) {
+            this.mainActivity.getQuizFragment().resetQuiz();
+            QuizViewModel quizViewModel = new QuizViewModel();
+            s = sharedPreferences.getString(this.mainActivity.getVOPROS(), null);
+            quizViewModel.FLAGS_IN_QUIZ =Integer.parseInt(s);
+
         }
 
         Toast.makeText(this.mainActivity, R.string.restarting_quiz,

@@ -17,4 +17,14 @@
         android:summary="@string/world_regions_description"
         android:persistent="true"
         android:defaultValue="@array/region_list" />
+
+
+    <ListPreference
+        android:entries="@array/quest_list"
+        android:entryValues="@array/quest_list"
+        android:key="quest_list_numberOfChoices"
+        android:title="@string/number_of_cvest"
+        android:summary="@string/number_cvest"
+        android:persistent="true"
+        android:defaultValue="5" />
 </PreferenceScreen>

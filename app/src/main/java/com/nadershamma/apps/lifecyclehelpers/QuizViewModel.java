@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class QuizViewModel extends ViewModel {
     private static final String TAG = "FlagQuiz Activity";
-    private static final int FLAGS_IN_QUIZ = 10;
+    public static  int FLAGS_IN_QUIZ = 10;
 
     private List<String> fileNameList;
     private List<String> quizCountriesList;
@@ -37,6 +37,9 @@ public class QuizViewModel extends ViewModel {
 
     public static int getFlagsInQuiz() {
         return FLAGS_IN_QUIZ;
+    }
+    public void setFlagsInQuiz(int FLAGS_IN_QUIZ)  {
+        this.FLAGS_IN_QUIZ = FLAGS_IN_QUIZ;
     }
 
     public int getTotalGuesses() {

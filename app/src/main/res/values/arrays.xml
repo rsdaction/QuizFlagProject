@@ -24,4 +24,12 @@
         <item>6</item>
         <item>8</item>
     </string-array>
+
+    <string-array name="quest_list">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+
+    </string-array>
 </resources>

@@ -30,7 +30,8 @@ public class GuessButtonListener implements OnClickListener {
 
         if (guess.equals(answer)) {
             this.mainActivityFragment.getQuizViewModel().setCorrectAnswers(1);
-            this.mainActivityFragment.getAnswerTextView().setText(answer + "!");
+            this.mainActivityFragment.getAnswerTextView().setText(answer + "!?");
+
             this.mainActivityFragment.getAnswerTextView().setTextColor(
                     this.mainActivityFragment.getResources().getColor(R.color.correct_answer));
 

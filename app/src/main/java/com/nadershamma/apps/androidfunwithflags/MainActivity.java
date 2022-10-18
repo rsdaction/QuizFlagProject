@@ -15,11 +15,13 @@ import android.view.MenuItem;
 import com.nadershamma.apps.eventhandlers.PreferenceChangeListener;
 import com.nadershamma.apps.lifecyclehelpers.QuizViewModel;
 
+import java.util.Collections;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     public static final String CHOICES = "pref_numberOfChoices";
     public static final String REGIONS = "pref_regionsToInclude";
+    public static final String VOPROS = "quest_list_numberOfChoices";
     private boolean deviceIsPhone = true;
     private boolean preferencesChanged = true;
     private MainActivityFragment quizFragment;
@@ -35,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
                 .registerOnSharedPreferenceChangeListener(preferencesChangeListener);
     }
 
+    private void setqvest_list_numberOfChoices() {
+        // set default values in the app's SharedPreferences
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+
+        // Register a listener for shared preferences changes
+
+    }
     private void screenSetUp() {
         if (getScreenSize() == Configuration.SCREENLAYOUT_SIZE_LARGE ||
                 getScreenSize() == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
@@ -55,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         this.setSharedPreferences();
         this.screenSetUp();
+
     }
 
     @Override
@@ -69,9 +79,15 @@ public class MainActivity extends AppCompatActivity {
                     .getStringSet(REGIONS, null));
 
             this.quizFragment.resetQuiz();
-
+//            this.quizViewModel.setRegionsSet(Collections.singleton(PreferenceManager.getDefaultSharedPreferences(this).getString(VOPROS, null)));
+//
             preferencesChanged = false;
+
+
+
         }
+
+
     }
 
     @Override
@@ -112,6 +128,10 @@ public class MainActivity extends AppCompatActivity {
 
     public static String getREGIONS() {
         return REGIONS;
+    }
+
+    public static String getVOPROS() {
+        return VOPROS;
     }
 
     public void setPreferencesChanged(boolean preferencesChanged) {

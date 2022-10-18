@@ -5,6 +5,8 @@
     <string name="number_of_choices_description">Отразить 2, 4, 6 из 8 вариантов выбора</string>
     <string name="world_regions">Регион</string>
     <string name="world_regions_description">Регионы для включения в викторину</string>
+    <string name="number_of_cvest">Количество вопросов</string>
+    <string name="number_cvest">Выбирите количество вопросов</string>
     <string name="guess_country">Угадай страну</string>
     <string name="results">%1$d попыток, %2$.02f%% правильно</string>
     <string name="incorrect_answer">Ошибка!</string>
@@ -17,4 +19,5 @@
     <string name="image_description">Изображение текущего флага в викторине</string>
     <string name="default_region">Europe</string>
     <string name="title_activity_settings">Настройки</string>
+
 </resources>
